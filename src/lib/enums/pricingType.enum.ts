@@ -1,0 +1,18 @@
+export enum PricingType {
+    SHIPPING = 'SHIPPING',
+    INSURANCE = 'INSURANCE',
+    HANDLING = 'HANDLING',
+    CUSTOMS = 'CUSTOMS',
+    STORAGE = 'STORAGE',
+    PICKUP = 'PICKUP',
+    DELIVERY = 'DELIVERY',
+    FUEL_SURCHARGE = 'FUEL_SURCHARGE',
+    OTHER = 'OTHER',
+}
+
+
+
+
+
+
+
