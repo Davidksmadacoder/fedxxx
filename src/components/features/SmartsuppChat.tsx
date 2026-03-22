@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -24,10 +24,10 @@ declare global {
  */
 export default function SmartsuppChat() {
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const envKey = process.env.NEXT_PUBLIC_SMARTSUPP_KEY;
-    const key = envKey || '97096bfe3a71931a431fd8232cdc9d7c159f6135';
+    const key = envKey || "c0e670fa992042e1c1519016e6aa026ce9abc110";
 
     // Avoid re-injecting on client-side navigations
     if (window.__SMARTSUPP_LOADED__) {
@@ -41,19 +41,19 @@ export default function SmartsuppChat() {
     // window.smartsupp||(function(d){ ... })(document);
     if (!window.smartsupp) {
       const d = document;
-      const s = d.getElementsByTagName('script')[0];
-      const c = d.createElement('script');
+      const s = d.getElementsByTagName("script")[0];
+      const c = d.createElement("script");
       const o = function (...args: any[]) {
         (o._ = o._ || []).push(args);
-      } as Window['smartsupp'];
+      } as Window["smartsupp"];
       o._ = [];
 
       window.smartsupp = o;
 
-      c.type = 'text/javascript';
-      c.charset = 'utf-8';
+      c.type = "text/javascript";
+      c.charset = "utf-8";
       c.async = true;
-      c.src = 'https://www.smartsuppchat.com/loader.js?';
+      c.src = "https://www.smartsuppchat.com/loader.js?";
       if (s && s.parentNode) {
         s.parentNode.insertBefore(c, s);
       } else {
@@ -74,4 +74,3 @@ export default function SmartsuppChat() {
     />
   );
 }
-
